@@ -1338,6 +1338,69 @@ html {
   }
 }
 
+/* =========================================================
+   Education Section
+   ========================================================= */
+.education-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.edu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2rem;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: var(--glow);
+}
+
+.edu-card__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 1.25rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.edu-card__date {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.edu-card__title {
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+
+.edu-card__inst {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.edu-card__desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
 /* Large / 4K screens */
 @media (min-width: 1920px) {
   :root {
