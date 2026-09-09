@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ============================= -->
+    <!-- Meta / SEO -->
+    <!-- ============================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070B16" />
+    <title>Ahmed Elshafey — Full Stack Web Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Ahmed Elshafey, a Full Stack Web Developer building modern, responsive and secure web applications with Angular, SQL Server and modern web technologies."
+    />
+    <meta name="author" content="Ahmed Elshafey" />
+    <meta
+      name="keywords"
+      content="Ahmed Elshafey, Full Stack Developer, Angular Developer, SQL Server, Web Developer Egypt, Portfolio"
+    />
+    <link rel="canonical" href="https://ahmed-elshafey.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ahmed Elshafey — Full Stack Web Developer" />
+    <meta
+      property="og:description"
+      content="I build modern, responsive, secure, and user-friendly web applications using Angular, SQL Server, and modern web technologies."
+    />
+    <meta property="og:image" content="/inventory-system.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+
+    <!-- ============================= -->
+    <!-- Fonts (Poppins) + Font Awesome Icons -->
+    <!-- ============================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ============================= -->
+    <!-- Stylesheet -->
+    <!-- ============================= -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ahmed Elshafey",
+        "jobTitle": "Full Stack Web Developer",
+        "address": { "@type": "PostalAddress", "addressCountry": "Egypt" },
+        "email": "mailto:your_aaalahmed@gmail.com",
+        "sameAs": ["https://www.linkedin.com/in/ahmed-el-shafei-423284351/"]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- ============================= -->
+    <!-- Loading Screen -->
+    <!-- ============================= -->
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <div class="loader__inner">
+        <div class="loader__mark">AE</div>
+        <div class="loader__bar"><span id="loaderBar"></span></div>
+        <p class="loader__text">Loading portfolio<span class="sr-only"> — please wait</span></p>
+      </div>
+    </div>
+
+    <!-- Mouse glow effect layer -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Skip link for accessibility -->
+    <a class="skip-link" href="#home">Skip to main content</a>
+
+    <!-- ============================= -->
+    <!-- Sticky Navigation -->
+    <!-- ============================= -->
+    <header class="navbar" id="navbar">
+      <nav class="nav container" aria-label="Main navigation">
+        <!-- Logo -->
+        <a href="#home" class="nav__logo" aria-label="Ahmed Elshafey — home">
+          <span class="nav__logo-mark">AE</span>
+          <span class="nav__logo-text">Ahmed Elshafey</span>
+        </a>
+
+        <!-- Menu -->
+        <ul class="nav__menu" id="navMenu">
+          <li><a class="nav__link is-active" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============================= -->
+      <!-- Hero Section -->
+      <!-- ============================= -->
+      <section class="hero" id="home">
+        <!-- Floating background shapes (parallax) -->
+        <div class="hero__shapes" aria-hidden="true">
+          <span class="shape shape--1" data-parallax="0.18"></span>
+          <span class="shape shape--2" data-parallax="0.28"></span>
+          <span class="shape shape--3" data-parallax="0.12"></span>
+          <span class="shape shape--ring" data-parallax="0.22"></span>
+          <span class="shape shape--grid" data-parallax="0.06"></span>
+        </div>
+
+        <div class="container hero__inner">
+          <p class="hero__eyebrow reveal">
+            <span class="dot" aria-hidden="true"></span> Available for new opportunities
+          </p>
+
+          <h1 class="hero__title reveal" data-delay="80">
+            Hi, I&apos;m <span class="grad">Ahmed Elshafey</span>
+          </h1>
+
+          <!-- Typing animation target -->
+          <h2 class="hero__subtitle reveal" data-delay="140">
+            <span class="typed" id="typed" aria-hidden="true"></span>
+            <span class="caret" aria-hidden="true"></span>
+            <span class="sr-only">Full Stack Web Developer</span>
+          </h2>
+
+          <p class="hero__desc reveal" data-delay="200">
+            I build modern, responsive, secure, and user-friendly web applications using Angular,
+            SQL Server, and modern web technologies.
+          </p>
+
+          <!-- Buttons -->
+          <div class="hero__actions reveal" data-delay="260">
+            <a class="btn btn--primary ripple" id="downloadCv" href="#" download="Ahmed-Elshafey-CV.txt">
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
+            </a>
+            <a class="btn btn--ghost ripple" href="#contact">
+              <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Contact Me
+            </a>
+          </div>
+
+          <!-- Social icons -->
+          <ul class="hero__social reveal" data-delay="320">
+            <li>
+              <a href="https://github.com/esraaaboelaas44" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ahmed-el-shafei-423284351/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:your_aaalahmed@gmail.com" aria-label="Email">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a class="scroll-indicator" href="#about" aria-label="Scroll to about section">
+          <span class="scroll-indicator__mouse"><span></span></span>
+          <span class="scroll-indicator__label">Scroll</span>
+        </a>
+      </section>
+
+      <!-- ============================= -->
+      <!-- About Me -->
+      <!-- ============================= -->
+      <section class="section" id="about">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__tag">01 — About</span>
+            <h2 class="section__title">About Me</h2>
+          </header>
+
+          <div class="about">
+            <div class="about__text glass reveal">
+              <p>
+                I am a Full Stack Web Development student with experience in building responsive and
+                user-friendly web applications. I enjoy solving problems, learning new technologies,
+                and creating modern websites that help businesses improve their online presence.
+              </p>
+              <div class="about__stats">
+                <div>
+                  <strong>9+</strong>
+                  <span>Core skills</span>
+                </div>
+                <div>
+                  <strong>Full Stack</strong>
+                  <span>Front &amp; back end</span>
+                </div>
+                <div>
+                  <strong>Angular</strong>
+                  <span>Main framework</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Info cards -->
+            <ul class="about__cards">
+              <li class="info-card glass reveal" data-delay="80">
+                <span class="info-card__icon"><i class="fa-regular fa-user" aria-hidden="true"></i></span>
+                <span class="info-card__label">Name</span>
+                <span class="info-card__value">Ahmed Elshafey</span>
+              </li>
+              <li class="info-card glass reveal" data-delay="160">
+                <span class="info-card__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                <span class="info-card__label">Role</span>
+                <span class="info-card__value">Full Stack Web Developer</span>
+              </li>
+              <li class="info-card glass reveal" data-delay="240">
+                <span class="info-card__icon"
+                  ><i class="fa-solid fa-location-dot" aria-hidden="true"></i
+                ></span>
+                <span class="info-card__label">Location</span>
+                <span class="info-card__value">Egypt</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= -->
+      <!-- Skills -->
+      <!-- ============================= -->
+      <section class="section" id="skills">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__tag">02 — Skills</span>
+            <h2 class="section__title">Skills &amp; Technologies</h2>
+            <p class="section__sub">
+              The tools I use every day to design, build and ship complete web applications.
+            </p>
+          </header>
+
+          <ul class="skills">
+            <!-- Each card: icon, name, animated progress bar -->
+            <li class="skill glass reveal" data-delay="0">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                <h3 class="skill__name">HTML</h3>
+                <span class="skill__value">95%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="HTML proficiency" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="95"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="60">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></span>
+                <h3 class="skill__name">CSS</h3>
+                <span class="skill__value">90%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="CSS proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="90"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="120">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-brands fa-js" aria-hidden="true"></i></span>
+                <h3 class="skill__name">JavaScript</h3>
+                <span class="skill__value">85%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="JavaScript proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="85"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="180">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-brands fa-angular" aria-hidden="true"></i></span>
+                <h3 class="skill__name">Angular</h3>
+                <span class="skill__value">85%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Angular proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="85"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="240">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+                <h3 class="skill__name">SQL Server</h3>
+                <span class="skill__value">80%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="SQL Server proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="80"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="300">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+                <h3 class="skill__name">Database Design</h3>
+                <span class="skill__value">80%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Database design proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="80"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="360">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i></span>
+                <h3 class="skill__name">Responsive Web Design</h3>
+                <span class="skill__value">90%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Responsive web design proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="90"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="420">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-solid fa-server" aria-hidden="true"></i></span>
+                <h3 class="skill__name">Backend Development</h3>
+                <span class="skill__value">75%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Backend development proficiency" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="75"></span>
+              </div>
+            </li>
+
+            <li class="skill glass reveal" data-delay="480">
+              <div class="skill__top">
+                <span class="skill__icon"><i class="fa-brands fa-git-alt" aria-hidden="true"></i></span>
+                <h3 class="skill__name">Git &amp; GitHub</h3>
+                <span class="skill__value">85%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Git and GitHub proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress__bar" data-level="85"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================= -->
+      <!-- Featured Project -->
+      <!-- ============================= -->
+      <section class="section" id="projects">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__tag">03 — Projects</span>
+            <h2 class="section__title">Featured Project</h2>
+          </header>
+
+          <article class="project glass reveal">
+            <!-- Project image -->
+            <figure class="project__media">
+              <img
+                src="/inventory-system.png"
+                alt="Dashboard of the Inventory Management System showing products, categories and stock levels"
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="project__caption">
+                A responsive Inventory Management System built with Angular and SQL Server.
+              </figcaption>
+            </figure>
+
+            <!-- Project content -->
+            <div class="project__body">
+              <h3 class="project__title">Inventory Management System</h3>
+
+              <p>
+                I developed a responsive Inventory Management System to help businesses manage
+                products, categories, and inventory efficiently.
+              </p>
+              <p>
+                The project was built using Angular, HTML, CSS, JavaScript, SQL Server, and backend
+                technologies.
+              </p>
+              <p>
+                I worked on the frontend, backend, database design, and testing to create a secure
+                and user-friendly application.
+              </p>
+
+              <!-- Technology badges -->
+              <ul class="badges" aria-label="Technologies used">
+                <li>Angular</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>SQL Server</li>
+              </ul>
+
+              <div class="project__actions">
+                <a
+                  class="btn btn--primary ripple"
+                  href="https://github.com/esraaaboelaas44/inventory-system"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================= -->
+      <!-- Contact Section -->
+      <!-- ============================= -->
+      <section class="section" id="contact">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__tag">04 — Contact</span>
+            <h2 class="section__title">Let&apos;s Work Together</h2>
+            <p class="section__sub">
+              Have a project in mind or an opportunity to share? I&apos;d be glad to hear from you.
+            </p>
+          </header>
+
+          <ul class="contact">
+            <li class="contact-card glass reveal">
+              <span class="contact-card__icon"
+                ><i class="fa-solid fa-envelope" aria-hidden="true"></i
+              ></span>
+              <h3 class="contact-card__title">Email</h3>
+              <a class="contact-card__value" href="mailto:your_aaalahmed@gmail.com"
+                >your_aaalahmed@gmail.com</a
+              >
+              <a class="btn btn--primary ripple" href="mailto:your_aaalahmed@gmail.com">
+                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Send Email
+              </a>
+            </li>
+
+            <li class="contact-card glass reveal" data-delay="120">
+              <span class="contact-card__icon"
+                ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+              ></span>
+              <h3 class="contact-card__title">LinkedIn</h3>
+              <a
+                class="contact-card__value"
+                href="https://www.linkedin.com/in/ahmed-el-shafei-423284351/"
+                target="_blank"
+                rel="noopener"
+                >/in/ahmed-el-shafei</a
+              >
+              <a
+                class="btn btn--ghost ripple"
+                href="https://www.linkedin.com/in/ahmed-el-shafei-423284351/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Open
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================= -->
+    <!-- Footer -->
+    <!-- ============================= -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <p class="footer__copy">&copy; 2026 Ahmed Elshafey</p>
+          <p class="footer__note">Built with HTML, CSS and JavaScript</p>
+        </div>
+
+        <ul class="footer__social">
+          <li>
+            <a href="https://github.com/esraaaboelaas44" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ahmed-el-shafei-423284351/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:your_aaalahmed@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- ============================= -->
+    <!-- Back To Top Button -->
+    <!-- ============================= -->
+    <button class="to-top" id="toTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- ============================= -->
+    <!-- Scripts -->
+    <!-- ============================= -->
+    <script src="/script.js"></script>
+  </body>
+</html>
