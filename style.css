@@ -547,10 +547,63 @@ html {
   overflow: hidden;
 }
 
+/* استبدل كود .hero__inner القديم بهذا الكود */
 .hero__inner {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1200px; /* تم زيادة العرض ليناسب التصميم الجديد */
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* تقسيم الشاشة إلى عمودين */
+  align-items: center;
+  gap: 3rem;
+}
+
+/* الأكواد الجديدة الخاصة بصورة الـ Hero */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero__image-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  border-radius: 30px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: var(--shadow-lg);
+  animation: floaty 8s ease-in-out infinite; /* إضافة تأثير الطفو للصورة */
+}
+
+/* توهج خلف الصورة ليعطي شكل احترافي */
+.hero__image-box::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle, var(--accent-soft), transparent 60%);
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.hero__image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px; /* أقل قليلاً من الإطار الخارجي لضبط الحواف */
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .hero__eyebrow {
@@ -1216,6 +1269,54 @@ html {
 /* =========================================================
    18. Responsive Breakpoints
    ========================================================= */
+
+/* Tablet & small desktop */
+@media (max-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Tablet & mobile navigation */
+@media (max-width: 860px) {
+  .hero__inner {
+    grid-template-columns: 1fr; /* تحويل لعمود واحد */
+    text-align: center;
+    gap: 3.5rem;
+  }
+
+  .hero__content {
+    align-items: center; /* توسيط النص في الموبايل */
+    order: 2; /* جعل النص يظهر تحت الصورة، أو امسح السطر لجعله فوقها */
+  }
+
+  .hero__image-wrapper {
+    order: 1; /* جعل الصورة تظهر أولاً في الموبايل */
+  }
+
+  .hero__desc {
+    margin-inline: auto;
+  }
+
+  .hero__actions,
+  .hero__social {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero__inner {
+    padding-top: 3rem;
+  }
+  
+  .hero__image-box {
+    max-width: 280px; /* تصغير الصورة قليلاً في شاشات الموبايل */
+  }
+}
+
+
 
 /* Laptop / small desktop */
 @media (max-width: 1024px) {
