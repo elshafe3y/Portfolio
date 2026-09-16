@@ -410,7 +410,7 @@
     const cv = [
       "AHMED ELSHAFEY",
       "Full Stack Web Developer — Egypt",
-      "Email: your_aaalahmed@gmail.com",
+      "Email:aaalahmed1234@gmail.com",
       "LinkedIn: https://www.linkedin.com/in/ahmed-el-shafei-423284351/",
       "",
       "PROFILE",
