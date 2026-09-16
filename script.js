@@ -403,7 +403,7 @@
      Creates a plain-text CV on the fly so the button always
      works without shipping a binary asset.
      ======================================================= */
-  function initDownloadCv() {
+  /*function initDownloadCv() {
     const link = $("#downloadCv");
     if (!link) return;
 
@@ -432,7 +432,7 @@
 
     const blob = new Blob([cv], { type: "text/plain;charset=utf-8" });
     link.href = URL.createObjectURL(blob);
-  }
+  }*/
 
   /* =======================================================
      15. Init
